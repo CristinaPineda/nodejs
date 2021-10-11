@@ -1,0 +1,2 @@
+Arquivo usado de apoio para demonstração do core module File System System
+qualquer coisa digitada aqui está valendo! :)
