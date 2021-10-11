@@ -1,0 +1,4 @@
+* instalados via 'npm"
+* iniciar o npm no projeto com 'npm init'
+* modulos ficam mapeados na pasta node_modules 
+* instalar modulos com 'npm install'
