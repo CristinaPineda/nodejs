@@ -1,0 +1,6 @@
+const meuModulo = require('./modulo');
+
+const soma = meuModulo.soma;
+
+soma(2,3);
+soma(10,45);
