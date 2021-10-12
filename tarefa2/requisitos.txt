@@ -1,0 +1,5 @@
+* criar projeto que aceito modulos externos
+* instalar o inquirer e o chalk
+* inquirer para receber nome e idade do usuario
+* apresentar a resposta com fundo amarela e fonte preta
+* tratamento de erro do inquirer com catch
