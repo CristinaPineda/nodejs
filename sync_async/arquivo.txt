@@ -1,0 +1,1 @@
+Arquivo criado de forma sincrona com a execução do programa.
