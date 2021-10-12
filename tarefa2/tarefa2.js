@@ -14,6 +14,9 @@ inquirer
   ])
   .then((answers) => {
     console.table(answers);
+    if(!answers.nome_usuario || !answers.idade_usuario) {
+      throw new Error('Nome e idade de usuario são obrigatórios!');
+    }
     const phrase = `Usuário ${answers.nome_usuario} com idade de ${answers.idade_usuario} anos, registrado com sucesso!`;
     console.log(chalk.bgYellow.black(phrase));
   })
