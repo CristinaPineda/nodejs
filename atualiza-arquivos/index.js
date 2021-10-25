@@ -18,7 +18,9 @@ const server = http.createServer((req, res) => {
       return res.end();
     });
   } else {
-    fs.writeFile("arquivo.txt", name, function (err, data) {
+    const nameNew = name + ",\r\n"; // virgula para csv e barras para quebra de linha
+
+    fs.appendFile("arquivo.txt", nameNew, function (err, data) {
       res.writeHead(302, {
         Location: "/",
       });
