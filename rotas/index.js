@@ -5,27 +5,19 @@ const url = require("url");
 const port = 3000;
 
 const server = http.createServer((req, res) => {
-  let urlInfo = require("url").parse(req.url, true);
-  const name = urlInfo.query.name;
+  let q = url.parse(req.url, true);
+  const filename = q.pathname.substring(1) // a partir do um pega após a '/'
 
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/html");
-
-  if (!name) {
-    fs.readFile("index.html", function (err, data) {
-      res.writeHead(200, { "Content-Type": "text/html" });
-      res.write(data);
-      return res.end();
-    });
-  } else {
-    const nameNew = name + ",\r\n"; // virgula para csv e barras para quebra de linha
-
-    fs.appendFile("arquivo.txt", nameNew, function (err, data) {
-      res.writeHead(302, {
-        Location: "/",
-      });
-      return res.end();
-    });
+  if (filename.includes('html')) {
+    if(fs.existsSync(filename)) {
+      fs.readFile("index.html", function (err, data) {
+        res.writeHead(200, { "Content-Type": "text/html" });
+        res.write(data);
+        return res.end();
+      })
+    } else {
+      //404
+    }
   }
 });
 
