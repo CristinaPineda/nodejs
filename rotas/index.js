@@ -6,17 +6,21 @@ const port = 3000;
 
 const server = http.createServer((req, res) => {
   let q = url.parse(req.url, true);
-  const filename = q.pathname.substring(1) // a partir do um pega após a '/'
+  const filename = q.pathname.substring(1); // a partir do um pega após a '/'
 
-  if (filename.includes('html')) {
-    if(fs.existsSync(filename)) {
+  if (filename.includes("html")) {
+    if (fs.existsSync(filename)) {
       fs.readFile(filename, function (err, data) {
         res.writeHead(200, { "Content-Type": "text/html" });
         res.write(data);
         return res.end();
-      })
+      });
     } else {
-      //404
+      fs.readFile("404.html", (err, data) => {
+        res.writeHead(404, { "Content-Type": "text/html" });
+        res.write(data);
+        return res.end();
+      });
     }
   }
 });
