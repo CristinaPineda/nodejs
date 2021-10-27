@@ -21,3 +21,5 @@ console.log(chalk.yellow.bold(diffArray));
 
 //npm update <nome> para atualização de pacotes
 // npx npm-check-updates -u
+// para instalar de forma global usar a flag -g ex: npm install <pacote> -g
+// para remover pacotes: npm uninstall <nome pacote> 
