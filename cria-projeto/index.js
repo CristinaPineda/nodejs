@@ -18,3 +18,6 @@ const diffArray = _.difference(array1, array2);
 console.log(chalk.yellow.bold(diffArray));
 
 //execute com node index.js na pasta raiz do projeto
+
+//npm update <nome> para atualização de pacotes
+// npx npm-check-updates -u
