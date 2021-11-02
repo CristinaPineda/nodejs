@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
 
 })
 
-listen(port, () => {
+app.listen(port, () => {
   console.log(`Aplicação rodando na porta: ${port}` )
 })
