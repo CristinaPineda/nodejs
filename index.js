@@ -8,22 +8,11 @@ const path = require('path');
 
 const basePath = path.join(__dirname, 'templates') // direciona o path para a pasta que vou usar com renderizações
 
-const checkAuth = function(req, res, next) {
-
-  req.authStatus = true;
-
-  if(req.authStatus) {
-    console.log('Login realizado, pode continuar');
-    next();  // vá para o próximo passo, senão fica num loading infinito
-  } else {
-    console.log('Faça o login para continuar')
-    next();
-  }
-}
+const checkAuth = require('./middlewares');
 
 app.use(checkAuth)
 
-app.get('/', (req, res) => {
+app.get('/', (_req, res) => {
 
   // res.sendFile(path.join(basePath, 'index.html')); //lê arquivo do template
   res.sendFile(`${basePath}/index.html`); // outra opção para ler o arquivo do templates
