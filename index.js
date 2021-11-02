@@ -11,7 +11,8 @@ const basePath = path.join(__dirname, 'templates') // direciona o path para a pa
 
 app.get('/', (req, res) => {
 
-  res.send('ola mundo')
+  // res.sendFile(path.join(basePath, 'index.html')); //lê arquivo do template
+  res.sendFile(`${basePath}/index.html`); // outra opção para ler o arquivo do templates
 
 })
 
