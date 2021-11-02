@@ -18,6 +18,8 @@ const checkAuth = function(req, res, next) {
   }
 }
 
+app.use(checkAuth)
+
 app.get('/', (req, res) => {
 
   // res.sendFile(path.join(basePath, 'index.html')); //lê arquivo do template
