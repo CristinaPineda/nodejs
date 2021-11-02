@@ -8,6 +8,15 @@ const path = require('path');
 
 const basePath = path.join(__dirname, 'templates') // direciona o path para a pasta que vou usar com renderizações
 
+const checkAuth = function(req, res, next) {
+
+  req.authStatus = true;
+  if(req.authStatus) {
+    console.log('Login realizado, pode continuar')
+  } else {
+    console.log('Faça o login para continuar')
+  }
+}
 
 app.get('/', (req, res) => {
 
