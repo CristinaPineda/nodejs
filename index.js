@@ -11,10 +11,13 @@ const basePath = path.join(__dirname, 'templates') // direciona o path para a pa
 const checkAuth = function(req, res, next) {
 
   req.authStatus = true;
+
   if(req.authStatus) {
-    console.log('Login realizado, pode continuar')
+    console.log('Login realizado, pode continuar');
+    next();  // vá para o próximo passo, senão fica num loading infinito
   } else {
     console.log('Faça o login para continuar')
+    next();
   }
 }
 
