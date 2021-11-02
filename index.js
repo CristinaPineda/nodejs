@@ -9,3 +9,7 @@ app.get('/', (req, res) => {
   res.send('ola mundo')
 
 })
+
+listen(port, () => {
+  console.log(`Aplicação rodando na porta: ${port}` )
+})
