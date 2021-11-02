@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/CristinaPineda/nodejs/issues"
   },
-  "homepage": "https://github.com/CristinaPineda/nodejs#readme"
+  "homepage": "https://github.com/CristinaPineda/nodejs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
