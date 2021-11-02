@@ -12,6 +12,13 @@ const checkAuth = require('./middlewares');
 
 app.use(checkAuth)
 
+app.get('/users/:id', (req, res) => {
+  const id = req.params.id;
+
+  console.log(`Buscando usuario: ${id}`)
+  res.sendFile(`${basePath}/users.html`);
+})
+
 app.get('/', (_req, res) => {
 
   // res.sendFile(path.join(basePath, 'index.html')); //lê arquivo do template
