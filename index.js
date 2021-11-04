@@ -6,7 +6,11 @@ const app = express();
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-app.get('/',(req, res) => {
+app.get('/dashboards', (req, res) => {
+  res.render('dashboards')
+})
+
+app.get('/',(_req, res) => {
 
   const user = {
     name: 'Cristina',
@@ -15,9 +19,11 @@ app.get('/',(req, res) => {
 
   const uso = 'Testes com template engine'
 
-  res.render('home', { user: user, uso })
+  const auth = true;
+
+  res.render('home', { user: user, uso, auth })
 })
 
 app.listen(3000, () => {
   console.log('Aplicação rodando na porta: 3000' )
-})
+});
