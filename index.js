@@ -26,6 +26,7 @@ app.post('/users/save', (req, res) => {
 
   console.log(`Nome: ${name}, idade: ${age}`);
   res.sendFile(`${basePath}/formAdd.html`) //retorna o form
+});
 
 app.get('/users/:id', (req, res) => {
   const id = req.params.id;
