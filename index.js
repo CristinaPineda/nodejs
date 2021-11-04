@@ -21,6 +21,11 @@ app.get('/', (_req, res) => {
   res.sendFile(`${basePath}/index.html`); // outra opção para ler o arquivo do templates
 })
 
+// 404 é criado abaixo de tudo pois oq que não passar cai aqui
+app.use((req, res, next) => {
+  res.sendFile(`${basePath}/404.html`)
+})
+
 app.listen(port, () => {
   console.log(`Aplicação rodando na porta: ${port}` )
 })
