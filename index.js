@@ -19,6 +19,14 @@ app.get('/users/:id', (req, res) => {
   res.sendFile(`${basePath}/users.html`);
 })
 
+app.get('/users/add', (req, res) => {
+  res.sendFile(`${basePath}/formAdd.html`);
+})
+
+app.post('/users/save', (req, res) => {
+
+})
+
 app.get('/', (_req, res) => {
 
   // res.sendFile(path.join(basePath, 'index.html')); //lê arquivo do template
