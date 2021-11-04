@@ -7,7 +7,10 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.get('/dashboards', (req, res) => {
-  res.render('dashboards')
+
+  const itens = ["ação 1", "ação 2", "ação 3", "ação 4"]
+
+  res.render('dashboards', {itens})
 })
 
 app.get('/',(_req, res) => {
@@ -19,7 +22,7 @@ app.get('/',(_req, res) => {
 
   const uso = 'Testes com template engine'
 
-  const auth = false;
+  const auth = true;
   const approved = false;
 
   res.render('home', { user: user, uso, auth, approved })
