@@ -20,6 +20,7 @@ app.get('/',(_req, res) => {
   const uso = 'Testes com template engine'
 
   const auth = false;
+  const approved = true;
 
   res.render('home', { user: user, uso, auth })
 })
