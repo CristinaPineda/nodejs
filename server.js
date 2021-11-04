@@ -1,5 +1,5 @@
 const express = require('express');
-const users = require('./users');
+// const users = require('./users');
 
 const app = express();
 const port = 5000;
@@ -7,12 +7,13 @@ const port = 5000;
 const path = require('path');
 const basePath = path.join(__dirname, 'templates');
 
+app.use(express.static('public'));
 
 app.get('/', (_req, res) => {
-  res.sendFile(`${basePath}/index.html`);
+  res.sendFile(`${basePath}/home.html`);
 });
 
-app.use((req, res, next) => {
+app.use((_req, res, _next) => {
   res.sendFile(`${basePath}/404.html`)
 });
 
