@@ -20,9 +20,9 @@ app.get('/',(_req, res) => {
   const uso = 'Testes com template engine'
 
   const auth = false;
-  const approved = true;
+  const approved = false;
 
-  res.render('home', { user: user, uso, auth })
+  res.render('home', { user: user, uso, auth, approved })
 })
 
 app.listen(3000, () => {

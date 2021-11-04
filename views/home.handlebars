@@ -1,6 +1,11 @@
 <h1>Template engine</h1>
 <p>Handlebars</p>
 <br>
+{{#if approved}}
+  <p>Ações aprovadas</p>
+{{else}}
+  <p>Suas ações não foram aprovadas</p>
+{{/if}}
 <p>O nome do usuário é: {{user.name}} e está fazendo o curso de {{user.course}}</p>
 <h3>{{uso}}</h3>
 {{#if auth}}
