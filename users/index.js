@@ -11,3 +11,5 @@ router.use('/cats', (_req, res) => {
 router.use('/dogs', (_req, res) => {
   res.sendFile(`${basePath}/dogs.html`)
 });
+
+module.exports = router;
