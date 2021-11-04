@@ -19,7 +19,7 @@ app.get('/',(_req, res) => {
 
   const uso = 'Testes com template engine'
 
-  const auth = true;
+  const auth = false;
 
   res.render('home', { user: user, uso, auth })
 })
