@@ -13,7 +13,9 @@ app.get('/',(req, res) => {
     course: 'Nodejs',
   }
 
-  res.render('home', { user: user })
+  const uso = 'Testes com template engine'
+
+  res.render('home', { user: user, uso })
 })
 
 app.listen(3000, () => {
