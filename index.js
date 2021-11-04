@@ -12,13 +12,6 @@ const checkAuth = require('./middlewares');
 
 app.use(checkAuth)
 
-app.get('/users/:id', (req, res) => {
-  const id = req.params.id;
-
-  console.log(`Buscando usuario: ${id}`)
-  res.sendFile(`${basePath}/users.html`);
-})
-
 app.get('/users/add', (req, res) => {
   res.sendFile(`${basePath}/formAdd.html`);
 })
@@ -26,6 +19,14 @@ app.get('/users/add', (req, res) => {
 app.post('/users/save', (req, res) => {
 
 })
+
+app.get('/users/:id', (req, res) => {
+  const id = req.params.id;
+
+  console.log(`Buscando usuario: ${id}`)
+  res.sendFile(`${basePath}/users.html`);
+})
+
 
 app.get('/', (_req, res) => {
 
