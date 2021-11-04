@@ -10,15 +10,22 @@ const basePath = path.join(__dirname, 'templates') // direciona o path para a pa
 
 const checkAuth = require('./middlewares');
 
-app.use(checkAuth)
+app.use(checkAuth);
+app.use(express.urlencoded({ extended: true })); // usados para ler o corpo da reuqisição
+app.use(express.json()); // esse tbm
 
 app.get('/users/add', (req, res) => {
   res.sendFile(`${basePath}/formAdd.html`);
 })
 
 app.post('/users/save', (req, res) => {
+  console.log(req.body);
 
-})
+  const name = req.body.name;
+  const age = req.body.age;
+
+  console.log(`Nome: ${name}, idade: ${age}`);
+  res.sendFile(`${basePath}/formAdd.html`) //retorna o form
 
 app.get('/users/:id', (req, res) => {
   const id = req.params.id;
