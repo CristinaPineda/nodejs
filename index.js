@@ -13,6 +13,15 @@ app.get('/dashboards', (req, res) => {
   res.render('dashboards', {itens})
 })
 
+app.get('/posts', (req, res) => {
+  const posts = {
+    title: 'Aprendendo Nodejs',
+    subtitle: 'Template engine com Handlebars',
+    body: 'Bora aprender!!!!',
+  }
+  res.render('blogpost', { posts })
+})
+
 app.get('/',(_req, res) => {
 
   const user = {
