@@ -13,7 +13,7 @@ app.get('/dashboards', (req, res) => {
   res.render('dashboards', {itens})
 })
 
-app.get('/posts', (req, res) => {
+app.get('/post', (req, res) => {
   const posts = {
     title: 'Aprendendo Nodejs',
     subtitle: 'Template engine com Handlebars',
