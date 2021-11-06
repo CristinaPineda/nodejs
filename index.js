@@ -3,7 +3,9 @@ const exphbs = require('express-handlebars');
 
 const app = express();
 
-app.engine('handlebars', exphbs());
+const hbs = exphbs.create({partialsDir: "/views/partials"}) // configura o caminho dos partials (componentes haha)
+
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.get('/dashboards', (req, res) => {
@@ -20,6 +22,30 @@ app.get('/post', (req, res) => {
     body: 'Bora aprender!!!!',
   }
   res.render('blogpost', { posts })
+})
+
+app.get('blog', (req, res) => {
+  const post = [{
+    title: 'Aprendendo Nodejs',
+    subtitle: 'Template engine com Handlebars',
+    body: 'Bora aprender!!!!',
+  },
+  {
+    title: 'Aprendendo Reactjs',
+    category: 'JavaScript',
+    body: 'Bora aprender!!!!',
+  },
+  {
+    title: 'Aprendendo Python',
+    category: 'Python',
+    body: 'Bora aprender!!!!',
+  },
+  {
+    title: 'Aprendendo Express',
+    category: 'Node',
+    body: 'Bora aprender!!!!',
+  }]
+  res.render('blog', { post })
 })
 
 app.get('/',(_req, res) => {
