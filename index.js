@@ -8,6 +8,8 @@ const hbs = exphbs.create({partialsDir: "/views/partials"}) // configura o camin
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+app.use(express.static('public'));
+
 app.get('/dashboards', (req, res) => {
 
   const itens = ["ação 1", "ação 2", "ação 3", "ação 4"]
