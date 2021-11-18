@@ -26,7 +26,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/books/inserbook', (req, res) => {
+  const title = req.body.title
+  const page = req.body.page
 
+  const query = `INSERT INTO books (title, page) VALUES ('${title}', '${page}')`
 })
 
 const connect = mysql.createConnection({
