@@ -20,3 +20,12 @@ const connect = mysql.createConnection({
   database: 'nodemysql',
 })
 
+connect.connect((err) => {
+  if(err) {
+    console.error(err);
+  }
+
+  console.log('MySql Conectado')
+
+  app.listen(3000)
+})
