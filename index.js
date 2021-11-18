@@ -25,11 +25,19 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
-app.post('/books/inserbook', (req, res) => {
+app.post('/books/insertbook', (req, res) => {
   const title = req.body.title
   const page = req.body.page
 
-  const query = `INSERT INTO books (title, page) VALUES ('${title}', '${page}')`
+  const querysql = `INSERT INTO books (title, page) VALUES ('${title}', '${page}')`
+
+  connect.query(querysql, (err) => {
+    if(err) {
+      console.error(err);
+    }
+
+    res.redirect('/')
+  })
 })
 
 const connect = mysql.createConnection({
