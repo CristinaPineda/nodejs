@@ -4,8 +4,9 @@ const mysql = require('mysql');
 
 const app = express();
 
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
+const hbs = exphbs.create();
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(express.static('public/index.html'));
 
@@ -16,7 +17,7 @@ app.get('/', (req, res) => {
 const connect = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: '130913',
   database: 'nodemysql',
 })
 
