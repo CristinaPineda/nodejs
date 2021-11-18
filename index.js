@@ -13,3 +13,10 @@ app.get('/', (req, res) => {
   res.render('home')
 })
 
+const connect = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'nodemysql',
+})
+
