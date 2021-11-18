@@ -1,6 +1,9 @@
+require("dotenv").config();
 const express = require('express');
 const exphbs = require('express-handlebars');
 const mysql = require('mysql');
+
+const MYSQLPASS = process.env.MYSQLPASS;
 
 const app = express();
 
@@ -17,7 +20,7 @@ app.get('/', (req, res) => {
 const connect = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '130913',
+  password: MYSQLPASS,
   database: 'nodemysql',
 })
 
